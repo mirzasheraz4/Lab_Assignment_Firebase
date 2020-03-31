@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/colorPrimary">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/RL2" >
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/IV1"
+            android:layout_centerInParent="true"
+            android:src="@drawable/logo" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/RL3"
+        android:layout_below="@id/RL2" >
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/IV2"
+            android:src="@drawable/logo2"/>
+    </RelativeLayout>
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/productIDET"
+        android:hint="Enter Product ID"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:maxLines="1"
+        android:maxLength="20"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/productNameET"
+        android:layout_below="@id/productIDET"
+        android:hint="Enter Product Name"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:maxLines="1"
+        android:maxLength="20"
+        android:layout_centerInParent="true"
+        />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/productPriceET"
+        android:hint="Enter Product Price"
+        android:layout_below="@id/productNameET"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:maxLines="1"
+        android:maxLength="20"
+        android:layout_centerInParent="true"
+        />
+    <Button
+        android:layout_below="@id/productPriceET"
+        android:layout_width="140dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="60dp"
+        android:layout_height="wrap_content"
+        android:text="ADD VALUES"
+        android:id="@+id/addValuesBtn"
+        android:onClick="addValuesToFirebaseFirestore"
+        android:background="@color/BasicAppColor"
+        android:textColor="@color/colorPrimary"
+
+        />
+    <Button
+        android:layout_below="@id/productPriceET"
+        android:layout_width="140dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="210dp"
+        android:layout_height="wrap_content"
+        android:text="GET COLLECTION"
+        android:id="@+id/getValuesBtn"
+        android:onClick="getAllDataFromFirebaseFirestore"
+        android:background="@color/BasicAppColor"
+        android:textColor="@color/colorPrimary"
+
+        />
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/addValuesBtn"
+        android:layout_marginTop="10dp"
+        android:background="@color/red"
+        android:text="Delete Document"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/deleteDocumentBTN"
+        android:onClick="deleteDocumentFromFirebaseFireStore"/>
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/deleteDocumentBTN"
+        android:layout_marginTop="10dp"
+        android:background="@color/red"
+        android:text="Delete Colection"
+        android:textColor="@color/colorPrimary"
+        android:onClick="deleteCollectionFromFirebaseFireStore"
+        android:id="@+id/deleteCollectionBTN" />
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/DataTV"
+        android:layout_below="@id/deleteCollectionBTN"
+        android:layout_margin="10dp"
+        android:text=""
+        android:scrollbars="vertical"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+</RelativeLayout>
